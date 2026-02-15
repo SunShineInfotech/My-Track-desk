@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Party Plot Booking System - Design System
+   Primary: #1877F2 (vibrant blue)
+   Clean, professional, modern aesthetic
+*/
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: #1877F2 */
+    --primary: 214 89% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Lighter blue for secondary elements */
+    --secondary: 214 100% 97%;
+    --secondary-foreground: 214 89% 52%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 214 100% 95%;
+    --accent-foreground: 214 89% 42%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success color for confirmed status */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning color for pending status */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 89% 52%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - Darker blue theme */
+    --sidebar-background: 214 89% 52%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 214 89% 52%;
+    --sidebar-accent: 214 89% 62%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 89% 62%;
+    --sidebar-ring: 0 0% 100%;
+
+    /* Custom shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(214 32% 91% / 0.5);
+    --shadow-md: 0 4px 6px -1px hsl(214 32% 91% / 0.5), 0 2px 4px -2px hsl(214 32% 91% / 0.5);
+    --shadow-lg: 0 10px 15px -3px hsl(214 32% 91% / 0.5), 0 4px 6px -4px hsl(214 32% 91% / 0.5);
+    --shadow-primary: 0 4px 14px 0 hsl(214 89% 52% / 0.4);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 214 89% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 214 89% 52%;
+
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 214 89% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 214 89% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-primary-glow {
+    box-shadow: var(--shadow-primary);
+  }
+
+  /* Mobile bottom nav safe area */
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Floating action button animation */
+  .fab-pulse {
+    animation: fab-pulse 2s infinite;
+  }
+
+  @keyframes fab-pulse {
+    0%, 100% {
+      box-shadow: 0 4px 14px 0 hsl(214 89% 52% / 0.4);
+    }
+    50% {
+      box-shadow: 0 4px 20px 0 hsl(214 89% 52% / 0.6);
+    }
+  }
+
+  /* Page transition */
+  .page-enter {
+    animation: page-enter 0.3s ease-out;
+  }
+
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
