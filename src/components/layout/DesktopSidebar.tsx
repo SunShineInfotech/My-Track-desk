@@ -12,14 +12,12 @@ import {
   PartyPopper,
   LandPlot,
   CircleUserRound,
+  Database,
 } from "lucide-react";
 
 const mainNavItems = [
   { icon: Home, label: "Dashboard", path: "/" },
-  { icon: Users, label: "Employees", path: "/view-employees" },
-  { icon: LandPlot, label: "Part Plots", path: "/view-party-plots" },
-  { icon: CircleUserRound, label: "Party Plots", path: "/view-helpers" },
-  { icon: Calendar, label: "Bookings", path: "/bookings" },
+  { icon: Database, label: "Sources", path: "/view-sources" },
 ];
 
 const settingsNavItems = [

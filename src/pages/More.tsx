@@ -9,6 +9,7 @@ import {
   Shield,
   HelpCircle,
   Bell,
+  Database,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -17,21 +18,19 @@ const menuItems = [
     section: "Account",
     items: [
       { icon: User, label: "Profile Details", path: "/profile", badge: null },
-      { icon: Bell, label: "Notifications", path: "/notifications", badge: "3" },
-    ],
-  },
-  {
-    section: "Management",
-    items: [
-      { icon: Users, label: "Users Management", path: "/users", badge: null },
-      { icon: Building2, label: "Party Plot Management", path: "/plots", badge: null },
+      { icon: Database, label: "Sources", path: "/view-sources" },
     ],
   },
   {
     section: "Preferences",
     items: [
       { icon: Settings, label: "Settings", path: "/settings", badge: null },
-      { icon: Shield, label: "Privacy & Security", path: "/privacy", badge: null },
+      {
+        icon: Shield,
+        label: "Privacy & Security",
+        path: "/privacy",
+        badge: null,
+      },
       { icon: HelpCircle, label: "Help & Support", path: "/help", badge: null },
     ],
   },
@@ -69,7 +68,8 @@ const More = () => {
                 to={item.path}
                 className={cn(
                   "flex items-center justify-between p-4 hover:bg-muted/50 transition-colors",
-                  index !== section.items.length - 1 && "border-b border-border"
+                  index !== section.items.length - 1 &&
+                    "border-b border-border",
                 )}
               >
                 <div className="flex items-center gap-3">

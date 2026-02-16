@@ -77,7 +77,7 @@ const ViewBookings = () => {
       formData.append("type", "1");
 
       const response = await axios.post(
-        `https://sunshineproduct.in/party_plote_booking_system/api/booking.php`,
+        `https://sunshineproduct.in/trackdesk/api/booking.php`,
         formData,
       );
 
@@ -113,7 +113,7 @@ const ViewBookings = () => {
       formData.append("id", selectedBooking.id);
 
       const response = await axios.post(
-        `https://sunshineproduct.in/party_plote_booking_system/api/booking.php`,
+        `https://sunshineproduct.in/trackdesk/api/booking.php`,
         formData,
         {
           headers: {

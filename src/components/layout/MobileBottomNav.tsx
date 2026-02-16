@@ -4,8 +4,8 @@ import { Home, Search, Plus, Calendar, MoreHorizontal } from "lucide-react";
 
 const navItems = [
   { icon: Home, label: "Home", path: "/" },
-  { icon: Search, label: "Search", path: "/search" },
-  { icon: null, label: "Add", path: "/add-booking" }, // Center FAB
+  { icon: Search, label: "Search", path: "/view-sources" },
+  { icon: null, label: "Add", path: "/add-source" }, // Center FAB
   { icon: Calendar, label: "Booking", path: "/bookings" },
   { icon: MoreHorizontal, label: "More", path: "/more" },
 ];
@@ -45,7 +45,7 @@ export function MobileBottomNav() {
                 "flex flex-col items-center justify-center gap-1 py-2 px-4 rounded-lg transition-colors min-w-[64px]",
                 isActive(item.path)
                   ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-foreground",
               )}
             >
               {item.icon && <item.icon className="w-5 h-5" />}
